@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# QUASAR — Where Logic Meets Silicon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Open-Source RISC-V Chip Design Platform
 
-Currently, two official plugins are available:
+Live Website → https://xdjhfr.github.io/QUASAR---Where-Logic-Meets-Silicon/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What is QUASAR?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+QUASAR is a conceptual all-in-one workspace for designing, simulating,
+and synthesizing RISC-V processors — built on three industry-leading
+open-source tools unified under a single interface.
 
-## Expanding the ESLint configuration
+One tap. One billion operations.  
+A chip the size of your fingernail makes it happen.  
+QUASAR is where the people who design that chip do their work.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Bundled Tools
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Tool | Role |
+|------|------|
+| Logisim-evolution | Circuit Design & Simulation |
+| Yosys | Logic Synthesis |
+| GTKWave | Waveform Analysis |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## About This Project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This website was built as a marketing presentation for QUASAR —
+a personal project exploring RISC-V processor design and EDA tooling.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The creator is currently developing the skills required to build
+the platform itself. This site represents the vision and direction
+of what QUASAR will become.
+
+**Stack:** Vite · React · TypeScript  
+**Theme:** Cosmic Minimalism  
+**License:** GPL-3.0
+
+---
+
+## Author
+
+Jom — Business Management Student & Self-taught Hardware Enthusiast  
+*"Semiconductors are the world's most foundational infrastructure."*
