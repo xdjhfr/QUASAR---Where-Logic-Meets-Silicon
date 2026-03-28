@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
+import { StarField } from './components/StarField'
 import { Navbar } from './components/Navbar'
 import PageTransition from './components/PageTransition'
 import { Home } from './pages/Home'
@@ -9,6 +10,7 @@ import { About } from './pages/About'
 export default function App() {
   return (
     <HashRouter>
+      <StarField />
       <Navbar />
       <PageTransition>
         <Routes>

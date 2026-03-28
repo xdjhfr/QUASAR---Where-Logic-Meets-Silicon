@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { StarField } from '../components/StarField'
 import { BinaryBoard } from '../components/BinaryBoard'
 import { ToolCard } from '../components/ToolCard'
 import { FeatureItem } from '../components/FeatureItem'
@@ -75,7 +74,6 @@ function FeatureSection() {
 export function Home() {
   return (
     <div className={styles.home}>
-      <StarField />
 
       {/* ===== HERO ===== */}
       <section id="section-home" className={styles.hero}>
