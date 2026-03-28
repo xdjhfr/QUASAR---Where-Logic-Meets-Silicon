@@ -1,0 +1,87 @@
+/* Initial hidden state for slide-in animation */
+.item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border-color 0.3s ease, transform 0.3s var(--ease-out);
+  opacity: 0;
+}
+
+.item:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-2px);
+}
+
+/* Slide directions (initial offscreen positions) */
+.slideLeft  { transform: translateX(-48px); }
+.slideRight { transform: translateX(48px); }
+
+/* Triggered when in viewport */
+.slideLeft.visible  { animation: slideInLeft  0.65s var(--ease-out) both; }
+.slideRight.visible { animation: slideInRight 0.65s var(--ease-out) both; }
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* After animation, reset so hover transform works */
+.item.visible:hover {
+  transform: translateY(-2px);
+}
+
+.iconWrap {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white-glow);
+  border-radius: 10px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

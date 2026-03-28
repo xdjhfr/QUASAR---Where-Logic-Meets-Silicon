@@ -1,0 +1,124 @@
+.wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+.inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Part 1: BinaryBoard ── */
+.boardWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boardLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 0.75rem;
+  text-align: center;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+}
+
+/* ── Part 2: Stat + Quote ── */
+.statRow {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 100px 1px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.statBlock {
+  text-align: center;
+}
+
+.statNumber {
+  font-family: 'Orbitron', var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  display: inline-block;
+}
+
+.statSup {
+  font-family: 'Orbitron', var(--font-display);
+  font-size: 0.55em;
+  vertical-align: super;
+  line-height: 0;
+  font-weight: 700;
+}
+
+.statSub {
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+}
+
+.vertDivider {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+}
+
+.quoteBlock {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.quoteVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quotePrimary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-family: var(--font-body);
+}
+
+.quoteSecondary {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .statRow {
+    grid-template-columns: 1fr;
+  }
+
+  .vertDivider {
+    width: 100%;
+    height: 1px;
+    align-self: auto;
+  }
+}

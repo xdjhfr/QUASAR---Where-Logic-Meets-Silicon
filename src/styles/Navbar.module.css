@@ -1,0 +1,205 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(4, 5, 10, 0.85);
+  border-bottom: 1px solid var(--border);
+}
+
+:global([data-theme="light"]) .nav {
+  background: rgba(245, 245, 247, 0.85);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  letter-spacing: 0.06em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.link:hover {
+  color: var(--text-primary);
+  background: var(--white-glow);
+}
+
+.link.active {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.07);
+  border-bottom: 1.5px solid var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.githubBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border: 1px solid var(--border-glow);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--white-glow);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.githubBtn:hover {
+  background: var(--white-glow-md);
+  border-color: var(--text-secondary);
+  transform: translateY(-1px);
+}
+
+.themeBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--white-glow);
+  border: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.themeBtn:hover {
+  background: var(--white-glow-md);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburgerOpen span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburgerOpen span:nth-child(2) { opacity: 0; }
+.hamburgerOpen span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ===== Scroll progress bar ===== */
+.progressTrack {
+  height: 2px;
+  width: 100%;
+  background: transparent;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--text-dim, #3a3a50), var(--text-primary, #e8e8f0));
+  transition: width 0.1s linear;
+  border-radius: 0 1px 1px 0;
+}
+
+/* ===== Back to top ===== */
+.backToTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+@media (max-width: 720px) {
+  .links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(4, 5, 10, 0.97);
+    backdrop-filter: blur(24px);
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    gap: 4px;
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

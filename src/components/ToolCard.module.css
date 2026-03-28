@@ -1,0 +1,168 @@
+/* Registers --border-angle as an animatable CSS property */
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.card {
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+
+  /* Scroll-reveal initial state */
+  opacity: 0;
+  transform: translateY(40px) perspective(600px) rotateX(8deg);
+  animation: none;
+  transition:
+    box-shadow   0.3s var(--ease-out),
+    border-color 0.3s ease;
+}
+
+/* Scroll-triggered reveal */
+.card.visible {
+  animation: cardReveal 0.7s var(--ease-out) both;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px) perspective(600px) rotateX(8deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) perspective(600px) rotateX(0deg);
+  }
+}
+
+/* After animation completes, allow hover transform */
+.card.visible:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border-color: var(--border-glow);
+}
+
+/* ---- Cursor-following inner glow ---- */
+.cursorGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mouse-x, -200px) var(--mouse-y, -200px),
+    rgba(255, 255, 255, 0.055),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card:hover .cursorGlow {
+  opacity: 1;
+}
+
+/* ---- Animated gradient border sweep ---- */
+.borderSweep {
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent   0%,
+    transparent  75%,
+    rgba(255,255,255,0.08) 80%,
+    rgba(255,255,255,0.7)  88%,
+    rgba(255,255,255,0.9)  91%,
+    rgba(255,255,255,0.7)  94%,
+    rgba(255,255,255,0.08) 99%,
+    transparent  100%
+  );
+  /* Mask to show only the border strip */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  --border-angle: 0deg;
+  animation: borderRotate 2.4s linear infinite paused;
+}
+
+.card:hover .borderSweep {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes borderRotate {
+  to { --border-angle: 360deg; }
+}
+
+/* ---- Top accent border (existing) ---- */
+.topBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.card:hover .topBorder {
+  background: rgba(255,255,255,0.6);
+}
+
+/* ---- Content ---- */
+.icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--white-glow);
+  border: 1px solid var(--border-glow);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  position: relative;
+  z-index: 2;
+}
