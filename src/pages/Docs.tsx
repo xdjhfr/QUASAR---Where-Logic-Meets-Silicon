@@ -43,14 +43,15 @@ const sections: DocSection[] = [
         <h1>Installation</h1>
         <p>QUASAR supports Linux, macOS, and Windows. Java 21+ is required.</p>
         <h2>Linux</h2>
-        <pre><code>{`wget https://github.com/username/quasar/releases/latest/quasar-linux.tar.gz
-tar -xzf quasar-linux.tar.gz
-sudo ./quasar/install.sh`}</code></pre>
+        <pre><code>{`git clone https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon.git
+cd QUASAR---Where-Logic-Meets-Silicon
+sudo ./install.sh`}</code></pre>
         <h2>macOS</h2>
-        <pre><code>{`brew tap username/quasar
-brew install quasar`}</code></pre>
+        <pre><code>{`git clone https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon.git
+cd QUASAR---Where-Logic-Meets-Silicon`}</code></pre>
         <h2>Windows</h2>
-        <pre><code>{`winget install QUASAR.QUASAR`}</code></pre>
+        <pre><code>{`git clone https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon.git
+cd QUASAR---Where-Logic-Meets-Silicon`}</code></pre>
         <p>After installation, launch QUASAR from your application menu or by running <code>quasar</code> in a terminal.</p>
       </>
     ),

@@ -98,7 +98,7 @@ export function Home() {
             </Link>
             <button
               className={styles.ctaSecondary}
-              onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}
+              onClick={() => window.open('https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon', '_blank')}
             >
               View on GitHub
             </button>

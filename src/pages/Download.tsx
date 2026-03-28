@@ -7,11 +7,11 @@ type OS = 'linux' | 'mac' | 'windows'
 const terminalData: Record<OS, TerminalLine[]> = {
   linux: [
     { type: 'comment', text: '# Download and install QUASAR' },
-    { type: 'command', text: 'wget https://github.com/username/quasar/releases/latest/quasar-linux.tar.gz' },
-    { type: 'output', text: 'Resolving github.com... 140.82.121.4' },
-    { type: 'output', text: 'Downloading quasar-linux.tar.gz (142 MB)...' },
+    { type: 'command', text: 'git clone https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon.git' },
+    { type: 'output', text: 'Cloning into \'QUASAR---Where-Logic-Meets-Silicon\'...' },
+    { type: 'output', text: 'Resolving deltas: 100% done.' },
     { type: 'output', text: '███████████████████████████████ 100%' },
-    { type: 'command', text: 'tar -xzf quasar-linux.tar.gz && cd quasar' },
+    { type: 'command', text: 'cd QUASAR---Where-Logic-Meets-Silicon' },
     { type: 'command', text: 'sudo ./install.sh' },
     { type: 'success', text: '[OK] Logisim-evolution v3.9.0 installed' },
     { type: 'success', text: '[OK] Yosys 0.38 installed' },
@@ -19,25 +19,23 @@ const terminalData: Record<OS, TerminalLine[]> = {
     { type: 'success', text: 'QUASAR is ready. Run: quasar' },
   ],
   mac: [
-    { type: 'comment', text: '# Install via Homebrew (recommended)' },
-    { type: 'command', text: 'brew tap username/quasar' },
-    { type: 'output', text: 'Tapping username/quasar...' },
-    { type: 'command', text: 'brew install quasar' },
-    { type: 'output', text: '==> Downloading quasar-macos-arm64.bottle.tar.gz' },
-    { type: 'output', text: '==> Installing quasar' },
+    { type: 'comment', text: '# Clone and install' },
+    { type: 'command', text: 'git clone https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon.git' },
+    { type: 'output', text: 'Cloning into \'QUASAR---Where-Logic-Meets-Silicon\'...' },
+    { type: 'output', text: 'Resolving deltas: 100% done.' },
+    { type: 'command', text: 'cd QUASAR---Where-Logic-Meets-Silicon' },
     { type: 'output', text: '==> Caveats: QUASAR requires Java 21+' },
     { type: 'success', text: '✔ quasar 1.0.0 installed successfully' },
     { type: 'command', text: 'quasar --version' },
     { type: 'output', text: 'QUASAR 1.0.0 (Logisim 3.9.0 / Yosys 0.38 / GTKWave 3.3.118)' },
   ],
   windows: [
-    { type: 'comment', text: '# Install via winget' },
-    { type: 'command', text: 'winget install QUASAR.QUASAR' },
-    { type: 'output', text: 'Found QUASAR [QUASAR.QUASAR]' },
-    { type: 'output', text: 'Downloading https://github.com/username/quasar/releases/quasar-setup.exe' },
+    { type: 'comment', text: '# Clone and install' },
+    { type: 'command', text: 'git clone https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon.git' },
+    { type: 'output', text: 'Cloning into \'QUASAR---Where-Logic-Meets-Silicon\'...' },
+    { type: 'output', text: 'Resolving deltas: 100% done.' },
+    { type: 'command', text: 'cd QUASAR---Where-Logic-Meets-Silicon' },
     { type: 'output', text: '  ██████████████████████████ 100%' },
-    { type: 'output', text: 'Successfully verified installer hash' },
-    { type: 'output', text: 'Starting package install...' },
     { type: 'success', text: 'Successfully installed QUASAR 1.0.0' },
     { type: 'comment', text: '# Or open the QUASAR app from Start Menu' },
   ],
@@ -94,7 +92,7 @@ export function Download() {
             or build from source on{' '}
             <button
               className={styles.inlineLink}
-              onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}
+              onClick={() => window.open('https://github.com/xdjhfr/QUASAR---Where-Logic-Meets-Silicon', '_blank')}
             >
               GitHub
             </button>
