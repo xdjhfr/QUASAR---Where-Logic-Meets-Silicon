@@ -411,7 +411,7 @@ export function EDAPreview() {
                   padding: '4px 0',
                   flexShrink: 0,
                 }}>
-                  {['clk', 'a[31:0]', 'b[31:0]', 'result', 'zero'].map((sig, i) => (
+                  {['clk', 'a[31:0]', 'b[31:0]', 'result', 'zero'].map((sig) => (
                     <div key={sig} style={{
                       fontSize: 7,
                       color: '#1e1e2c',
